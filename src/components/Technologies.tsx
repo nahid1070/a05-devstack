@@ -17,9 +17,6 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
     // useState - to display selected stack on the right side
     const [saveStack, setSaveStack] = useState<Technology[]>([]);
 
-    // useState - to make card button disabled for selection
-    const [hasAdded, setHasAdded] = useState<boolean>(false);
-
     // Getting Selected Stack
     const handleStackData = (stackInfo : Technology) : void => {
 
@@ -27,15 +24,14 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
         const exsit = saveStack.find( stack => stack.id === stackInfo.id );
         
         if (exsit) {
-            // setSaveStack(stackData);
+
+           toast.warning(`Already Added!`);
 
         } else {
 
             const newStackData = [...saveStack, stackInfo]
             setSaveStack(newStackData);
-
-            // Stack added info
-            setHasAdded(true);
+            toast.success(`${stackInfo.name} added to the Stack`);
 
         }
     }
@@ -54,7 +50,7 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
     }
 
     // Handler - Delete All Stacks 
-    const handleDeleteAll = () => {
+    const handleDeleteAll = () : void => {
 
         if (saveStack.length !== 0) {
 
@@ -87,7 +83,7 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                     </p>
                 </div>
 
-                {/* Technologies Items */}
+                {/* Technologies Card Items */}
                 <div className="grid grid-cols-4 mt-5 gap-7">
 
                     <div className="grid grid-cols-3 gap-7 my-7 col-span-3">
@@ -97,12 +93,11 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                                 key={techData.id} 
                                 techData={techData} 
                                 handleStackData={handleStackData}
-                                hasAdded={hasAdded}
-
                             />)
                         }
                     </div>
 
+                    {/* Your Stack Sidebar */}
                     <div>
 
                         <div className="card bg-base-100 shadow-sm p-6 mt-6">

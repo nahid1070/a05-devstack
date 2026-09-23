@@ -1,15 +1,23 @@
 import { FaStar } from "react-icons/fa";
 import type { Technology } from "../types/technology";
+import { useState } from "react";
 
 export interface TechData {
     techData: Technology;
-    hasAdded: boolean;
     handleStackData: (stackInfo : Technology) => void;
 }
 
-function TechnologyCard( { techData, hasAdded, handleStackData } : TechData) {
+function TechnologyCard( { techData, handleStackData } : TechData) {
 
-    
+    // useState - to make card button disabled for selection
+    const [hasAdded, setHasAdded] = useState<boolean>(false);
+
+    const handleStackSelectionMarked = () : void => {
+
+        setHasAdded(true);
+
+    }
+
     
     return (
         <>
@@ -43,9 +51,16 @@ function TechnologyCard( { techData, hasAdded, handleStackData } : TechData) {
                     <div className="card-actions">
 
                         <button
-                            onClick={ () => handleStackData(techData) }
-                            className={`bg-brand-black text-white 
-                            btn-block font-light rounded-[10px] p-3 cursor-pointer`} 
+                        
+                            onClick={ 
+                                () => {
+                                    handleStackData(techData);
+                                    handleStackSelectionMarked();
+                                }
+                            }
+                            className={`bg-brand-black ${hasAdded ? 'bg-gray-600' : ''} text-white 
+                            btn-block font-light rounded-[10px] p-3 
+                            ${hasAdded ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                         >
                             Add to Stack
                         </button>
