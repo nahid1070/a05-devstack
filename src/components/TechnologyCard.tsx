@@ -10,7 +10,7 @@ export interface TechData {
 function TechnologyCard( { techData, handleStackData } : TechData) {
 
     // useState - to make card button disabled for selection
-    const [hasAdded, setHasAdded] = useState<boolean>(false);
+    const [hasStackAdded, setHasAdded] = useState<boolean>(false);
 
     const handleStackSelectionMarked = () : void => {
 
@@ -21,7 +21,7 @@ function TechnologyCard( { techData, handleStackData } : TechData) {
     
     return (
         <>
-            <div className="card bg-base-100 shadow-sm">
+            <div className={`card bg-base-100 shadow-sm ${hasStackAdded && 'border border-brand-btn-orange'}`}>
                 <div className="card-body p-6">
                     <div className="badge badge-soft badge-primary font-semibold absolute top-3 right-3">
                         { techData.badge }
@@ -58,9 +58,9 @@ function TechnologyCard( { techData, handleStackData } : TechData) {
                                     handleStackSelectionMarked();
                                 }
                             }
-                            className={`bg-brand-black ${hasAdded ? 'bg-gray-600' : ''} text-white 
+                            className={`bg-brand-black ${hasStackAdded ? 'bg-gray-600' : ''} text-white 
                             btn-block font-light rounded-[10px] p-3 
-                            ${hasAdded ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                            ${hasStackAdded ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                         >
                             Add to Stack
                         </button>

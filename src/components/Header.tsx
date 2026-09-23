@@ -3,7 +3,7 @@ import logo from '../assets/logo-text.png';
 function Header() {
     
     return (
-        <header className='shadow-sm bg-base-100'>
+        <header className='shadow-sm bg-base-100 border-b border-[#F1F5F9] py-3'>
             <div className="navbar container mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
