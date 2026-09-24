@@ -93,10 +93,12 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-6 xl:grid-cols-4 mt-5 gap-5">
+                {/* Grid - Technologies Cards */}
+                <div className="grid grid-cols-1 xl:grid-cols-4 md:px-7 lg:px-0 gap-5 mt-5">
 
                     {/* Technologies Card Items */}
-                    <div className="grid md:grid-cols-2 md:col-span-4 xl:grid-cols-3 xl:col-span-3 gap-4 my-7 ">
+                    <div className="grid md:grid-cols-2 xl:grid-cols-3 xl:col-span-3 
+                        gap-4 my-7 md:order-2 lg:order-1">
                         { allTechData.map( techData => 
                             
                             <TechnologyCard 
@@ -109,7 +111,7 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                     </div>
 
                     {/* Your Stack Sidebar */}
-                    <div className="col-span-1 md:col-span-2 xl:col-span-1">
+                    <div className="col-span-1 xl:col-span-1 md:order-1 lg:order-2">
 
                         <div className="card bg-base-100 shadow-sm p-5 mt-6">
 
