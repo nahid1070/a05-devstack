@@ -1,6 +1,6 @@
 import { Suspense } from "react";
-import Footer from "./components/Footer"
-import Header from "./components/Header"
+import Footer from "./components/Footer/Footer"
+import Header from "./components/Header/Header"
 import Technologies from "./components/Technologies"
 import type { Technology } from "./types/technology";
 import Banner from "./components/Banner";

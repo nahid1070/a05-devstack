@@ -1,4 +1,5 @@
-import logo from '../assets/logo-text.png';
+import logo from '../../assets/logo-text.png';
+import FooterBottom from './FooterBottom';
 
 function Footer() {
 
@@ -31,7 +32,7 @@ function Footer() {
                 <div className='w-[60%] flex gap-4 justify-between'>
 
                     <div>
-                        <h2 className='font-bold text-brand-heading pb-2'>PRODUCT</h2>
+                        <h2 className='font-semibold text-[15px] text-brand-heading pb-2'>PRODUCT</h2>
                         <ul className='text-brand-text leading-loose'>
                             <li>
                                 <a href="#">Home</a>
@@ -48,7 +49,7 @@ function Footer() {
                     </div>
 
                     <div>
-                        <h2 className='font-bold text-brand-heading pb-2'>COMPANY</h2>
+                        <h2 className='font-semibold text-[15px] text-brand-heading pb-2'>COMPANY</h2>
                         <ul className='text-brand-text leading-loose'>
                             <li>
                                 <a href="#">About</a>
@@ -66,7 +67,7 @@ function Footer() {
 
 
                     <div>
-                        <h2 className='font-bold text-brand-heading pb-2'>LEGAL</h2>
+                        <h2 className='font-semibold text-[15px] text-brand-heading pb-2'>LEGAL</h2>
                         <ul className='text-brand-text leading-loose'>
                             <li>
                                 <a href="#">Privacy Policy</a>
@@ -80,6 +81,9 @@ function Footer() {
 
                 </div>
             </div>
+
+            {/* Footer Bottom */}
+            <FooterBottom />
         </footer>
     );
 }
