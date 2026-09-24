@@ -21,7 +21,9 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
     const handleStackData = (stackInfo : Technology) : void => {
 
         // Prevent Duplicate Selection
-        const exsit = saveStack.find( stack => stack.id === stackInfo.id );
+        const exsit = saveStack.some( 
+            stack => stack.id === stackInfo.id 
+        );
         
         if (exsit) {
 
@@ -31,6 +33,8 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
 
             const newStackData = [...saveStack, stackInfo]
             setSaveStack(newStackData);
+
+            // Toaster - Success Notification
             toast.success(`${stackInfo.name} added to the Stack`);
 
         }
@@ -44,7 +48,11 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
         if (exsit) {
             const availableSelectedStack = saveStack.filter( stack => stack.id !== deleteStack.id );
             setSaveStack(availableSelectedStack);
+
+            // Toaster
             toast.error(` ${deleteStack.name} Stack Removed`);
+
+
         }
 
     }
@@ -62,10 +70,10 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
         }
         
     }
-   
 
     // Has Stack available or not
     const hasSaveStack = saveStack.length;
+
 
     return (
         <>
@@ -83,9 +91,9 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                     </p>
                 </div>
 
-                {/* Technologies Card Items */}
                 <div className="grid grid-cols-4 mt-5 gap-7">
 
+                    {/* Technologies Card Items */}
                     <div className="grid grid-cols-3 gap-7 my-7 col-span-3">
                         { allTechData.map( techData => 
                             
@@ -93,6 +101,7 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                                 key={techData.id} 
                                 techData={techData} 
                                 handleStackData={handleStackData}
+                                saveStack={saveStack}
                             />)
                         }
                     </div>

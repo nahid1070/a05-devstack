@@ -1,27 +1,23 @@
-import { FaStar } from "react-icons/fa";
+import { FaCheck, FaStar } from "react-icons/fa";
 import type { Technology } from "../types/technology";
-import { useState } from "react";
 
 export interface TechData {
     techData: Technology;
     handleStackData: (stackInfo : Technology) => void;
+    saveStack: Technology[];
 }
 
-function TechnologyCard( { techData, handleStackData } : TechData) {
+function TechnologyCard( { techData, handleStackData, saveStack } : TechData) {
 
-    // useState - to make card button disabled for selection
-    const [hasStackAdded, setHasAdded] = useState<boolean>(false);
+   const activeCard = saveStack.some( 
+            stack => stack.id === techData.id 
+    );
 
-    const handleStackSelectionMarked = () : void => {
 
-        setHasAdded(true);
-
-    }
-
-    
     return (
         <>
-            <div className={`card bg-base-100 shadow-sm ${hasStackAdded && 'border border-brand-btn-orange'}`}>
+            <div className={`card bg-base-100 shadow-sm ${ activeCard && 'border border-brand-btn-orange'}`}>
+
                 <div className="card-body p-6">
                     <div className="badge badge-soft badge-primary font-semibold absolute top-3 right-3">
                         { techData.badge }
@@ -55,14 +51,13 @@ function TechnologyCard( { techData, handleStackData } : TechData) {
                             onClick={ 
                                 () => {
                                     handleStackData(techData);
-                                    handleStackSelectionMarked();
                                 }
                             }
-                            className={`bg-brand-black ${hasStackAdded ? 'bg-gray-600' : ''} text-white 
+                            className={` flex items-center justify-center gap-2 bg-brand-black ${activeCard ? 'bg-linear-to-r from-brand-btn-orange to-brand-btn-pink' : ''} text-white 
                             btn-block font-light rounded-[10px] p-3 
-                            ${hasStackAdded ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+                            ${activeCard ? 'cursor-not-allowed' : 'cursor-pointer'}`}
                         >
-                            Add to Stack
+                            {activeCard ? <FaCheck /> : ''} Add to Stack
                         </button>
 
                     </div>
