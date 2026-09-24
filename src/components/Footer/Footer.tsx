@@ -4,17 +4,17 @@ import FooterBottom from './FooterBottom';
 function Footer() {
 
     return (
-        <footer className='border border-t-brand-border'>
+        <footer className='border-t border-t-brand-border p-2'>
             <div className='container mx-auto flex py-16'>
 
-                <div className='w-[40%]'>
+                <div className='w-full md:w-[40%]'>
                     <div>
-                        <img src={logo} alt="Footer Logo" />
+                        <img src={logo} alt="Footer Logo" className='max-sm:mx-auto' />
                     </div>
-                    <p className='text-brand-text w-[80%] pt-4 pb-8'>Curated tools, technologies, and resources for developers building
+                    <p className='text-brand-text max-sm:mx-auto sm:w-[80%] text-center md:text-left pt-4 pb-8'>Curated tools, technologies, and resources for developers building
                     modern software.</p>
 
-                    <ul className='flex gap-2 font-semibold text-brand-black-2 text-sm'>
+                    <ul className='flex justify-center md:justify-start gap-2 font-semibold text-brand-black-2 text-sm'>
                         <li>
                             <a href="#">GitHub</a>
                         </li>
@@ -29,7 +29,7 @@ function Footer() {
                     </ul>
                 </div>
 
-                <div className='w-[60%] flex gap-4 justify-between'>
+                <div className='hidden w-[60%] md:flex gap-4 justify-between'>
 
                     <div>
                         <h2 className='font-semibold text-[15px] text-brand-heading pb-2'>PRODUCT</h2>

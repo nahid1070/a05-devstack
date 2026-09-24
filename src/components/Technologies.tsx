@@ -77,16 +77,16 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
 
     return (
         <>
-            <section className="container mx-auto">
+            <section className="container mx-auto px-2 sm:px-0">
                 {/* Section Title */}
                 <div>
-                    <h2 className="font-Inter font-extrabold text-4xl">
-                        Explore the 
-                        <span className="bg-linear-to-r from-brand-btn-pink to-brand-purple bg-clip-text text-transparent">
+                    <h2 className="font-Inter font-extrabold text-[24px] sm:text-4xl text-center md:text-left">
+                        Explore the  
+                        <span className="bg-linear-to-r from-brand-btn-pink to-brand-purple bg-clip-text text-transparent"> 
                             Technologies
                         </span>
                     </h2>
-                    <p className="text-brand-text pt-2">
+                    <p className="text-brand-text pt-2 text-center sm:text-left">
                         Pick one technology per category to build your ideal stack.
                     </p>
                 </div>
