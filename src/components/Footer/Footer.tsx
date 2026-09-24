@@ -4,27 +4,31 @@ import FooterBottom from './FooterBottom';
 function Footer() {
 
     return (
-        <footer className='border-t border-t-brand-border p-2'>
+        <footer className='border-t border-t-brand-border px-4'>
             <div className='container mx-auto flex py-16'>
 
                 <div className='w-full md:w-[40%]'>
                     <div>
                         <img src={logo} alt="Footer Logo" className='max-sm:mx-auto' />
                     </div>
-                    <p className='text-brand-text max-sm:mx-auto sm:w-[80%] text-center md:text-left pt-4 pb-8'>Curated tools, technologies, and resources for developers building
-                    modern software.</p>
+                    <p className='text-brand-text max-sm:mx-auto sm:w-[80%] text-center 
+                        md:text-left pt-4 pb-8'>
+                        Curated tools, technologies, and resources for developers building
+                        modern software.
+                    </p>
 
-                    <ul className='flex justify-center md:justify-start gap-2 font-semibold text-brand-black-2 text-sm'>
+                    <ul className='flex justify-center md:justify-start gap-2 font-semibold 
+                        text-brand-black-2 text-sm'>
                         <li>
-                            <a href="#">GitHub</a>
+                            <a href="https://github.com/">GitHub</a>
                         </li>
 
                         <li>
-                            <a href="#">Twitter</a>
+                            <a href="https://x.com/">Twitter</a>
                         </li>
 
                         <li>
-                            <a href="#">LinkedIn</a>
+                            <a href="https://www.linkedin.com/">LinkedIn</a>
                         </li>
                     </ul>
                 </div>
