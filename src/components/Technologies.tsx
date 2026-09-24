@@ -71,8 +71,8 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
         
     }
 
-    // Has Stack available or not
-    const hasSaveStack = saveStack.length;
+    // Stack Counter or length
+    const stackCount = saveStack.length;
 
 
     return (
@@ -116,9 +116,21 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                         <div className="card bg-base-100 shadow-sm p-5 mt-6">
 
                             <h2 className="font-bold">Your Stack</h2>
-                            <p className="text-brand-text">
-                                { hasSaveStack ? `${hasSaveStack} Technology Selected` : 'No technologies selected yet.' }
+                            <p className="text-brand-side-stack tracking-wide">
+                                { stackCount ? `${stackCount} Technology Selected` : 
+                                'No technologies selected yet.' }
                             </p>
+
+                            {
+                            
+                                stackCount === 0 && (
+                                <div className="text-brand-side-stack border border-dotted 
+                                    border-brand-side-stack rounded-2xl text-center tracking-wide
+                                    p-7 my-3">
+                                    Your stack is empty.
+                                </div>
+                                )
+                            }
 
                             {
                                 saveStack.map( stack => 
@@ -130,11 +142,16 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                             }
 
 
-                            <button
-                                onClick={handleDeleteAll}
-                                className="btn btn-error btn-outline rounded-[10px] mt-15 hover:text-white">
-                                    Remove All
-                            </button>
+                            {
+                                stackCount !== 0 && (
+                                    <button
+                                        onClick={handleDeleteAll}
+                                        className="btn btn-error btn-outline rounded-[10px] mt-15 
+                                        hover:text-white">
+                                        Remove All
+                                    </button>
+                                )
+                            }
 
                         </div>
 
