@@ -80,13 +80,15 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
             <section className="container mx-auto px-2 sm:px-0">
                 {/* Section Title */}
                 <div>
-                    <h2 className="font-Inter font-extrabold text-[24px] sm:text-4xl text-center md:text-left">
+                    <h2 className="font-Inter font-extrabold text-[24px] sm:text-4xl 
+                        text-center lg:text-left">
                         Explore the  
-                        <span className="bg-linear-to-r from-brand-btn-pink to-brand-purple bg-clip-text text-transparent"> 
+                        <span className="bg-linear-to-r from-brand-btn-pink to-brand-purple 
+                            bg-clip-text text-transparent"> 
                             Technologies
                         </span>
                     </h2>
-                    <p className="text-brand-text pt-2 text-center sm:text-left">
+                    <p className="text-brand-text pt-2 text-center lg:text-left">
                         Pick one technology per category to build your ideal stack.
                     </p>
                 </div>
@@ -109,7 +111,7 @@ function Technologies({ techDataPromise } : TechnologiesProps ) {
                     {/* Your Stack Sidebar */}
                     <div className="col-span-1 md:col-span-2 xl:col-span-1">
 
-                        <div className="card bg-base-100 shadow-sm p-6 mt-6">
+                        <div className="card bg-base-100 shadow-sm p-5 mt-6">
 
                             <h2 className="font-bold">Your Stack</h2>
                             <p className="text-brand-text">

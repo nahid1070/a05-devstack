@@ -5,47 +5,50 @@ function Header() {
     return (
         <header className='shadow-sm bg-base-100 border-b border-[#F1F5F9] py-3'>
             <div className="navbar container mx-auto">
+
+                {/* Mobile Menu */}
                 <div className="navbar-start">
                     <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-                        <svg aria-label="Menu" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
-                    </div>
-                    <ul
-                        tabIndex={-1}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <li>
-                            <a href='#'>Home</a>
-                        </li>
-                        <li>
-                            <a href='#'>Technologies</a>
-                        </li>
-                    </ul>
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                            <svg aria-label="Menu" xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+                        </div>
+                        <ul
+                            tabIndex={-1}
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li>
+                                <a href='#' className='hover:bg-transparent text-brand-active-menu'>Home</a>
+                            </li>
+                            <li>
+                                <a href='#' className='hover:bg-transparent hover:text-brand-active-menu'>Technologies</a>
+                            </li>
+                        </ul>
                     </div>
                     <a href='#'>
                         <img src={logo} alt="Logo" />
                     </a>
                 </div>
 
+                {/* Desktop Menu */}
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal px-1 text-[16px]">
                         <li>
-                            <a href='#'>Home</a>
+                            <a href='#' className='text-brand-active-menu hover:bg-transparent'>Home</a>
                         </li>
                     
                         <li>
-                            <a href='#'>Technologies</a>
+                            <a href='#' className='hover:bg-transparent hover:text-brand-active-menu'>Technologies</a>
                         </li>
 
                         <li>
-                            <a href='#'>Projects</a>
+                            <a href='#' className='hover:bg-transparent hover:text-brand-active-menu'>Projects</a>
                         </li>
 
                         <li>
-                            <a href='#'>About</a>
+                            <a href='#' className='hover:bg-transparent hover:text-brand-active-menu'>About</a>
                         </li>
 
                         <li>
-                            <a href='#'>Contact</a>
+                            <a href='#' className='hover:bg-transparent hover:text-brand-active-menu'>Contact</a>
                         </li>
                     </ul>
                 </div>
