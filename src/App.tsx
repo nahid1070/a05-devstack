@@ -4,6 +4,7 @@ import Header from "./components/Header/Header"
 import Technologies from "./components/Technologies"
 import type { Technology } from "./types/technology";
 import Banner from "./components/Banner";
+import LoaderSpinner from "./components/LoaderSpinner";
 
 // Creating Promise to Get Technologies Data
 const techDataPromise = async () : Promise<Technology[]> => {
@@ -20,7 +21,7 @@ function App() {
       <Header />
       <Banner />
 
-      <Suspense fallback={<>Loading</>}>
+      <Suspense fallback={<LoaderSpinner />}>
         <Technologies techDataPromise={techDataPromise()} />
       </Suspense>
 
